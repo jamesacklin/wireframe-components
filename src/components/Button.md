@@ -5,6 +5,12 @@ import Button from "./Button";
 
 <div>
   <Button text="Hello World" />
-  <Button primary text="Primary Button" />
-</div>
+  <Button
+    primary
+    text="Primary Button"
+    onClick={() => {
+      window.alert("Clicked!");
+    }}
+  />
+</div>;
 ```
