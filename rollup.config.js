@@ -21,9 +21,10 @@ export default [
         exclude: "node_modules/**"
       }),
       resolve({
-        customResolveOptions: {
-          moduleDirectory: 'src'
-        }
+        // This will force a build with no external dependencies, probably not good?
+        // customResolveOptions: {
+        //   moduleDirectory: 'src'
+        // }
       }),
       external(),
       commonjs({
