@@ -1,6 +1,6 @@
 {
   "name": "wireframe-components",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A set of UI components for wireframing in React applications",
   "main": "index.js",
   "scripts": {
