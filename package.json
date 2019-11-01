@@ -1,0 +1,26 @@
+{
+  "name": "wireframe-components",
+  "version": "1.0.0",
+  "description": "A set of UI components for wireframing in React applications",
+  "main": "index.js",
+  "scripts": {
+    "start": "styleguidist server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "James Acklin",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-styled-components": "^1.10.6",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-styleguidist": "^10.1.0",
+    "styled-components": "^4.4.1",
+    "styled-system": "^5.1.2",
+    "webpack": "^4.41.2"
+  }
+}
