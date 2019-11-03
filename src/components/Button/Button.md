@@ -1,7 +1,7 @@
 A very simple button.
 
 ```jsx
-import Button from "./Button";
+import Button from "./";
 
 <div>
   <Button text="Hello World" />
