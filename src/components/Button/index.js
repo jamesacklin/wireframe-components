@@ -1,7 +1,7 @@
-import React from "react"
-import PropTypes from "prop-types"
-import styled from "styled-components"
-import { variant } from "styled-system"
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { variant as vari } from 'styled-system';
 
 const button = styled.button`
   font-family: "Ubuntu", "Helvetica", "Arial", sans-serif;
@@ -14,42 +14,49 @@ const button = styled.button`
   cursor: pointer;
   outline: none;
   appearance: button;
-`
+`;
 
 const Btn = styled(button)(
-  variant({
+  vari({
     variants: {
       default: {
         color: 'black',
         bg: 'white',
-        borderColor: 'black'
+        borderColor: 'black',
       },
       primary: {
         color: 'white',
         bg: 'black',
-        borderColor: 'black'
+        borderColor: 'black',
       },
       secondary: {
         color: 'white',
         bg: 'gray',
-        borderColor: 'gray'
-      }
-    }
-  })
-)
+        borderColor: 'gray',
+      },
+    },
+  }),
+);
+
+export default function Button({ clickFunc, children, variant }) {
+  return (
+    <Btn
+      variant={variant}
+      onClick={clickFunc}
+    >
+      {children}
+    </Btn>
+  );
+}
 
 Button.defaultProps = {
   variant: 'default',
-  children: 'Button Label'
-}
+  children: 'Button Label',
+  clickFunc: () => { },
+};
 
 Button.propTypes = {
   variant: PropTypes.oneOf(['default', 'primary', 'secondary']),
-  children: PropTypes.string
-}
-
-export default function Button(props) {
-  return (
-    <Btn {...props}>{props.children}</Btn>
-  )
-}
+  children: PropTypes.string,
+  clickFunc: PropTypes.func,
+};
