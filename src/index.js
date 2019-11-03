@@ -1,3 +1,4 @@
+import Theme from "./theme"
 import Button from "./components/Button"
 
-export { Button }
+export { Button, Theme }

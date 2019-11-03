@@ -1,16 +1,15 @@
 A very simple button.
 
 ```jsx
+import { ThemeProvider } from "styled-components";
 import Button from "./";
+import Theme from "../../theme";
 
 <div>
-  <Button text="Hello World" />
-  <Button
-    primary
-    text="Primary Button"
-    onClick={() => {
-      window.alert("Clicked!");
-    }}
-  />
-</div>;
+  <ThemeProvider theme={Theme}>
+    <Button />
+    <Button variant="secondary">Secondary Button</Button>
+    <Button variant="primary">Primary Button</Button>
+  </ThemeProvider>
+</div>
 ```

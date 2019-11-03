@@ -1,26 +1,55 @@
 import React from "react"
+import PropTypes from "prop-types"
 import styled from "styled-components"
+import { variant } from "styled-system"
 
-const Btn = styled.button`
+const button = styled.button`
   font-family: "Ubuntu", "Helvetica", "Arial", sans-serif;
   font-weight: 300;
-  background: ${props => props.primary ? "black" : "white"};
-  color: ${props => props.primary ? "white" : "black"};
   display: inline-block;
   font-size: 1em;
   margin: 0 0.5em;
   padding: 0.5em 1em;
   line-height: 1em;
-  border: 1px solid black;
   cursor: pointer;
   outline: none;
-  &:hover {
-    background: gray;
-    border: 1px solid gray;
-    color: white;
-  }
+  appearance: button;
 `
 
+const Btn = styled(button)(
+  variant({
+    variants: {
+      default: {
+        color: 'black',
+        bg: 'white',
+        borderColor: 'black'
+      },
+      primary: {
+        color: 'white',
+        bg: 'black',
+        borderColor: 'black'
+      },
+      secondary: {
+        color: 'white',
+        bg: 'gray',
+        borderColor: 'gray'
+      }
+    }
+  })
+)
+
+Button.defaultProps = {
+  variant: 'default',
+  children: 'Button Label'
+}
+
+Button.propTypes = {
+  variant: PropTypes.oneOf(['default', 'primary', 'secondary']),
+  children: PropTypes.string
+}
+
 export default function Button(props) {
-  return <Btn primary={props.primary} onClick={props.onClick}>{props.text}</Btn>
+  return (
+    <Btn {...props}>{props.children}</Btn>
+  )
 }
