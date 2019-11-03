@@ -8,7 +8,7 @@ import Theme from "../../theme";
 <ThemeProvider theme={Theme}>
   <Button />
   <Button variant="secondary">Secondary Button</Button>
-  <Button variant="primary">Primary Button</Button>
+  <Button variant="primary" onClick={() => { window.alert('hi!')}} >Primary Button</Button>
 </ThemeProvider>
 
 ```

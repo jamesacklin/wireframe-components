@@ -38,11 +38,11 @@ const Btn = styled(button)(
   }),
 );
 
-export default function Button({ clickFunc, children, variant }) {
+export default function Button({ onClick, children, variant }) {
   return (
     <Btn
       variant={variant}
-      onClick={clickFunc}
+      onClick={onClick}
     >
       {children}
     </Btn>
@@ -52,11 +52,11 @@ export default function Button({ clickFunc, children, variant }) {
 Button.defaultProps = {
   variant: 'default',
   children: 'Button Label',
-  clickFunc: () => { },
+  onClick: () => { },
 };
 
 Button.propTypes = {
   variant: PropTypes.oneOf(['default', 'primary', 'secondary']),
   children: PropTypes.string,
-  clickFunc: PropTypes.func,
+  onClick: PropTypes.func,
 };
