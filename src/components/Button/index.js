@@ -11,6 +11,7 @@ const button = styled.button`
   margin: 0 0.5em;
   padding: 0.5em 1em;
   line-height: 1em;
+  border: 1px solid transparent;
   cursor: pointer;
   outline: none;
   appearance: button;
